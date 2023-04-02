@@ -13,8 +13,8 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function create_form()
+    public function create()
     {
-        $this->render('create-form');
+        $this->render('create');
     }
 }

@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<?php
-session_start();
 
-if($_SESSION['user'] != null){
-    header("Location: /");
-}
-?>
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
@@ -19,8 +13,8 @@ if($_SESSION['user'] != null){
 <body>
     <?php include_once(__DIR__."/../components/header.php"); ?>
     <div class="container">
-        <div class="login-container">
-            <form class="login" action="login" method="POST">
+        <div class="register-container">
+            <form class="register" action="register" method="POST">
                 <div class="messages">
                     <?php
                         if(isset($messages)){
@@ -30,8 +24,10 @@ if($_SESSION['user'] != null){
                         }
                     ?>
                 </div>
-                <input name="email" type="text" placeholder="email@email.com">
+                <input type="text" name="login" placeholder="login">
+                <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
+                <input name="display_name" type="text" placeholder="display name">
                 <button type="submit">LOGIN</button>
             </form>
         </div>
