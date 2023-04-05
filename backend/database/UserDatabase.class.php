@@ -11,12 +11,7 @@ class UserDatabase extends Database{
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         //check if password is correct
         if($user != false && password_verify($password, $user['password']) == true){
-            return new User(
-                $user['email'],
-                $user['password'],
-                $user['name'],
-                $user['display_name']
-            );
+            return $user['id'];
         }
         if($user == false){
             return null;
@@ -48,12 +43,15 @@ class UserDatabase extends Database{
         $stmt->bindParam(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->execute();
         echo "user created";
-        return new User(
-            $email,
-            $password,
-            $name,
-            $display_name
-        );
+        return $user['id'];
+    }
+
+    public function getUserById($id){
+        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE id = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+        return $user;
     }
 
 }
