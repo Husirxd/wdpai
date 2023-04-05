@@ -6,16 +6,18 @@ class User {
     private $name;
     private $display_name;
 
-    public function __construct(
-        string $email,
-        string $password,
-        string $name,
-        string $display_name
-    ) {
-        $this->email = $email;
-        $this->password = $password;
-        $this->name = $name;
-        $this->display_name = $display_name;
+    public function __construct($user_id){
+        //create UserDatabase object
+        $userDatabase = new UserDatabase();
+        //get user from database
+        $user = $userDatabase->getUserById($user_id);
+
+        //set user properties
+        $this->email = $user->email;
+        $this->password = $user->password;
+        $this->name = $user->name;
+        $this->display_name = $user->display_name;
+        
     }
 
     public function getEmail(): string 
