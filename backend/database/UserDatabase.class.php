@@ -30,8 +30,6 @@ class UserDatabase extends Database{
             echo "user exist";
         }
 
-
-        //hash password
         
         $password = password_hash($password, PASSWORD_DEFAULT);
         
