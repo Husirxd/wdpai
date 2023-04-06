@@ -16,7 +16,10 @@ foreach($quizzes as $quiz){
     echo $quiz->title;
     echo $quiz->category;
     echo $quiz->created_at;
+    ?> 
+    <a href="/quiz?quiz=<?php echo $quiz->id ?>" >Solve Quiz</a>
+    
+    <?php
+
 }
-
-
 ?>

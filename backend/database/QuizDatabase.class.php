@@ -24,6 +24,7 @@ class QuizDatabase extends Database {
     }
 
     public function getQuizById($id){
+
         $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE id = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();

@@ -8,6 +8,15 @@ const CreateQuiz = () => {
         });
     }
 }
-
-
 CreateQuiz();
+
+const SolveQuiz = () => {
+    
+        if(document.querySelector("#solve-quiz")) {
+    
+            import("./solve-quiz.js").then((module) => {
+                module.solveQuiz();
+            });
+        }
+    }
+SolveQuiz();
