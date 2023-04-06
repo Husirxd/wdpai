@@ -22,7 +22,7 @@ if(isset($messages)){
     <?php include_once(__DIR__."/../components/header.php"); ?>
     <div class="container">
         <div class="create-container">
-            <form class="create" action="create" method="POST" id="create-quiz" enctype="multipart/form-data">
+            <form `class="create" action="create"` method="POST" id="create-quiz" enctype="multipart/form-data">
                 <input name="title" type="text" placeholder="title">
                 <input name="category" type="text" placeholder="category">
                 <input name="is_public" type="checkbox" placeholder="is_public">
