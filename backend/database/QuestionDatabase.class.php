@@ -20,13 +20,14 @@ class QuestionDatabase extends Database{
         return $questions;
     }
 
-    public function addQuestion($quiz_id, $question_text, $answer, $points, $correct_answer){
-        $stmt = $this->connect()->prepare('INSERT INTO questions (quiz_id, question, answers, points, correct_answer) VALUES (:quiz_id, :question, :answers, :points, :correct_answer)');
+    public function addQuestion($quiz_id, $question_text, $answer, $points, $correct_answer, $image_url){
+        $stmt = $this->connect()->prepare('INSERT INTO questions (quiz_id, question, answers, points, correct_answer, image_url) VALUES (:quiz_id, :question, :answers, :points, :correct_answer, :image_url)');
         $stmt->bindParam(':quiz_id', $quiz_id, PDO::PARAM_STR);
         $stmt->bindParam(':question', $question_text, PDO::PARAM_STR);
         $stmt->bindParam(':answers', $answer, PDO::PARAM_STR);
         $stmt->bindParam(':points', $points, PDO::PARAM_STR);
         $stmt->bindParam(':correct_answer', $correct_answer, PDO::PARAM_STR);
+        $stmt->bindParam(':image_url', $image_url, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt;
 

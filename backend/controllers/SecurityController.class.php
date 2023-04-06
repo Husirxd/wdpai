@@ -5,6 +5,8 @@ require_once __DIR__ .'/../models/User.class.php';
 require_once __DIR__ ."/../database/UserDatabase.class.php";
 require_once __DIR__ ."/../database/QuizDatabase.class.php";
 require_once __DIR__ ."/../database/QuestionDatabase.class.php";
+require_once __DIR__ ."/FileController.class.php";
+
 
 
 session_start();
@@ -76,6 +78,7 @@ class SecurityController extends AppController {
 
 
     public function create(){
+   
         if(!$this->isPost()){
             return $this->render('create');
         }
@@ -84,45 +87,11 @@ class SecurityController extends AppController {
             $category = $_POST["category"];
             $is_public = $_POST["is_public"];
             //get thumbnail file and save it to server folder /uploads/user_id
-            
-            if(!file_exists(__DIR__ ."/../uploads/user".$_SESSION["user"])){
-                mkdir(__DIR__ ."/../uploads/user".$_SESSION["user"], 0777, true);
-            }
+        
+            $fileManager = FileManager::getInstance();
             $thumbnail_url = null;
             $thumbnail = $_FILES["thumbnail"];
-            if($thumbnail["name"]){
-                $thumbnail_name = $thumbnail["name"];
-                $thumbnail_tmp_name = $thumbnail["tmp_name"];
-                $thumbnail_size = $thumbnail["size"];
-                $thumbnail_error = $thumbnail["error"];
-                $thumbnail_type = $thumbnail["type"];
-                $thumbnail_ext = explode('.', $thumbnail_name);
-                $thumbnail_actual_ext = strtolower(end($thumbnail_ext));
-                $allowed = array('jpg', 'jpeg', 'png');
-                if(in_array($thumbnail_actual_ext, $allowed)){
-                    if($thumbnail_error === 0){
-                        if($thumbnail_size < 100000){
-                            $thumbnail_name_new = uniqid('', true).".".$thumbnail_actual_ext;
-                            $thumbnail_destination = __DIR__ ."/../uploads/user".$_SESSION["user"]."/".$thumbnail_name_new;
-                            move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination);
-                        }
-                        else{
-                            $messages[] = "Your file is too big";
-                            return $this->render('create', ['messages' => $messages]);
-                        }
-                    }
-                    else{
-                        $messages[] = "There was an error uploading your file";
-                        return $this->render('create', ['messages' => $messages]);
-                    }
-                }
-                else{
-                    $messages[] = "You cannot upload files of this type";
-                    return $this->render('create', ['messages' => $messages]);
-                }
-                $thumbnail_url = "uploads/user".$_SESSION["user"]."/".$thumbnail_name_new;
-            }
-
+            $thumbnail_url =  $fileManager->uploadFile($thumbnail, $_SESSION["user"]);
 
             $quizDatabase = new QuizDatabase();
             $quiz = $quizDatabase->CreateQuiz($title, $category, $is_public,$thumbnail_url);
@@ -139,7 +108,14 @@ class SecurityController extends AppController {
                     if(is_array($answer)){
                         $answer = json_encode($answer);
                     }
-                    $questionDatabase->addQuestion($quiz_id, $question, $answer,1 ,1);
+                    if(isset($_FILES['image_url-'.$i])){
+                        $question_image = $_FILES['image_url-'.$i];
+                        $question_image =  $fileManager->uploadFile($question_image, $_SESSION["user"]);
+                    }
+                    else{
+                        $question_image = null;
+                    }
+                    $questionDatabase->addQuestion($quiz_id, $question, $answer,1 ,1, $question_image);
                     
                 }
             }
