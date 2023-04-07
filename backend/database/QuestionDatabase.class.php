@@ -21,6 +21,7 @@ class QuestionDatabase extends Database{
     }
 
     public function addQuestion($quiz_id, $question_text, $answer, $points, $correct_answer, $image_url){
+
         $stmt = $this->connect()->prepare('INSERT INTO questions (quiz_id, question, answers, points, correct_answer, image_url) VALUES (:quiz_id, :question, :answers, :points, :correct_answer, :image_url)');
         $stmt->bindParam(':quiz_id', $quiz_id, PDO::PARAM_STR);
         $stmt->bindParam(':question', $question_text, PDO::PARAM_STR);

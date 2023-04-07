@@ -1,6 +1,7 @@
 <?php
 session_start();
 //check if user is logged in
+
 if(isset($_SESSION["user"])){
     $user = new User($_SESSION['user']);
     echo "Hello " . $user->getDisplayName();

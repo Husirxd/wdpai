@@ -40,8 +40,18 @@ class UserDatabase extends Database{
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
         $stmt->bindParam(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->execute();
-        echo "user created";
-        return $user['id'];
+
+        $user = $this->getUserByEmail($email);
+
+        return $user->id;
+    }
+
+    public function getUserByEmail($email){
+        $stmt = $this->connect()->prepare('SELECT * FROM users WHERE email = :email');
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_OBJ);
+        return $user;
     }
 
     public function getUserById($id){

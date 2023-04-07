@@ -33,10 +33,18 @@ if(isset($messages)){
                     <input type="hidden" id="question-count" name="question_count" value="1">
                     <div class="question question--template">
                         <input class="question" name="question-0" type="text" placeholder="question">
+                        <label><input type="number" min="0" max="68" class="question__points" name="points-0"></label>
+                        <input type="hidden" name="correct-0" class="question__correct" value="0">
                         <input type="file" class="question__image" name="image_url-0">
                         <div class="answers">
-                            <input class="answer" name="answer-0[]" type="text" placeholder="answer">
-                            <input class="answer" name="answer-0[]" type="text" placeholder="answer">
+                            <div class="answer-container">
+                                <input class="answer" name="answer-0[]" type="text" placeholder="answer">
+                                <button  type="button" class="set-correct">Set Correct</button>
+                            </div>
+                            <div class="answer-container">
+                                <input class="answer" name="answer-0[]" type="text" placeholder="answer">
+                                <button  type="button" class="set-correct">Set Correct</button>
+                            </div>
                         </div>
                         <button type="button" class="add-answer">ADD ANSWER</button>
                     </div>
