@@ -15,13 +15,14 @@ class SecurityController extends AppController {
     public function login()
     {   
 
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
-        if(isset($_POST["email"])){
-            $email = $_POST["email"];
-            $password = $_POST["password"];
+        if(isset($_POST["login_email"])){
+            $email = $_POST["login_email"];
+            $password = $_POST["login_password"];
             $userDatabase = new userDatabase();
             $user = $userDatabase->LoginUser($email, $password);
             //start user session
@@ -36,15 +37,12 @@ class SecurityController extends AppController {
         }   
     }
 
-    public function register()
-    {
+    public function register(){
     
         if (!$this->isPost()) {
             return $this->render('register');
         }
-      
         if(isset($_POST["login"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["display_name"])){
-            echo "register";
             $name = $_POST["login"];
             $email = $_POST["email"];
             $password = $_POST["password"];
@@ -52,14 +50,12 @@ class SecurityController extends AppController {
             $userDatabase = new userDatabase();
             $user = $userDatabase->RegisterUser($name, $email, $password, $display_name);
             
-
-
             if($user != null){
                 $_SESSION["user"] = $user;
-                header("Location: /");
+                header("Location: / ");
             }
             else{
-                $messages[] = "User with this email already exists";
+                $messages[] = "Something went wrong";
                 return $this->render('register', ['messages' => $messages]);
             }
         }
@@ -104,6 +100,8 @@ class SecurityController extends AppController {
                 for($i = 0; $i < $question_count; $i++){
                     $question = $_POST['question-'.$i];
                     $answer = $_POST['answer-'.$i];
+                    $correct = $_POST['correct-'.$i];
+                    $points = $_POST['points-'.$i];
                     //if answer is array create json from it
                     if(is_array($answer)){
                         $answer = json_encode($answer);
@@ -115,8 +113,7 @@ class SecurityController extends AppController {
                     else{
                         $question_image = null;
                     }
-                    $questionDatabase->addQuestion($quiz_id, $question, $answer,1 ,1, $question_image);
-                    
+                    $questionDatabase->addQuestion($quiz_id, $question, $answer,$points , $correct, $question_image);
                 }
             }
 
