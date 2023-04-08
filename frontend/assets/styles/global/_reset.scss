@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&family=Montserrat:wght@100;500;700;900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #222;
+    color:white;
+}
+
+*{
+    font-family: 'Hind', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+
+}
+
+
+input, textarea{
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 10px;
+    font-size:1.5;
+    color: #222;
+    background: white;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        box-shadow: 0 4px 15px rgba(58, 133, 255, 0.705);
+    }
+}
+
+.container{
+    max-width: 1440px;
+    margin: auto;
+    width: 70vw;
+    @include to(1366px){
+        width: 85vw;
+    }
+}
+
+.quizzes{
+    &__grid{
+        margin-top: 2em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include to(1366px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include to(768px){
+            grid-template-columns: repeat(1, 1fr);
+        }
+        gap:2em;
+    }
+}
+
+.button{
+    padding: 1ch 2ch;
+    border: none;
+    border-radius: 100px;
+    background: $azure;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition:all 0.3s ease-in-out;
+    &:hover{
+        background: $azure;
+        scale: 1.05;
+        box-shadow: 0 4px 15px rgba(58, 133, 255, 0.705);
+    }
+}
+
+.flex{
+    display: flex;
+    gap:1em;
+    margin: 1em 0;
+    &--center{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.heading{
+    margin-bottom: 1rem;
+    color:#222;
+}
+
+.text-blue{
+    span{
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        color:$azure;
+    }
+}

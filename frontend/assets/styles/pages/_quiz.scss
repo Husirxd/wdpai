@@ -1,0 +1,75 @@
+#solve-quiz{
+
+    .hero{
+        display: flex;
+        gap:3em;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2em;
+        &>*{
+            flex: 1;
+        }
+        img{
+            max-height: 300px;
+            object-fit: cover;
+        }
+    }
+
+    .quiz{
+        margin-bottom: 2em;
+        .questions{
+            .question{
+                background-color: white;
+                border-radius: 10px;
+                padding: 1em;
+                margin-bottom: 1em;
+
+                &__text{
+                    margin: 1em 0;
+                    h3{
+                        color: #222;
+                    }
+                }
+                &__answers{
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    gap: 1em;
+
+                    .answer{
+
+                        padding: 1em;
+                        border-radius: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        font-family: "Montserrat", sans-serif;
+                        transition: background-color 0.1s ease-in-out;
+                        //for answers from 1n to 4n set different background color
+                        color:#222;
+                        &:nth-child(4n+1){
+                            background-color: $amber;
+                        }
+                        &:nth-child(4n+2){
+                            background-color: $orange-pantone;
+                        }
+                        &:nth-child(4n+3){
+                            background-color: $rose;
+                        }
+                        &:nth-child(4n+4){
+                            background-color: $blue-violet;
+                        }
+                        &:hover{
+                            background-color: greenyellow;
+                        }
+                        &--active{
+                            background-color: greenyellow!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

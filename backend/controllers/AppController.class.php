@@ -20,13 +20,15 @@ class AppController {
 
     protected function render(string $template = null, array $variables = [])
     {
+        
         $templatePath = 'frontend/templates/'. $template.'.php';
         $output = 'File not found';
                 
         if(file_exists($templatePath)){
+            $title = 'Kogoot';
             extract($variables);
-            
             ob_start();
+            include_once 'frontend/partials/header.php';
             include $templatePath;
             $output = ob_get_clean();
         }

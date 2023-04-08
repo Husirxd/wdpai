@@ -4,10 +4,11 @@ class Question{
 
     private $id;
     private $quiz_id;
-    public $question;
+    public  $question;
     private $answers;
     private $points;
     private $correct_answer;
+    public $image_url;
 
     public function __construct($question){
 
@@ -18,6 +19,7 @@ class Question{
         $this->answers = $question->answers;
         $this->points = $question->points;
         $this->correct_answer = $question->correct_answer;
+        $this->image_url = $question->image_url;
 
     }
 
@@ -34,6 +36,10 @@ class Question{
     }
     public function getCorrectAnswer(){
         return $this->correct_answer;
+    }
+
+    public function getImageUrl(){
+        return "/backend/".$this->image_url;
     }
 }
 

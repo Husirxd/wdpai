@@ -51,7 +51,7 @@ class QuizDatabase extends Database {
 
     public function getQuizzesByDate(){
 
-        $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE is_public = true ORDER BY created_at DESC LIMIT 3');
+        $stmt = $this->connect()->prepare('SELECT id FROM quizzes WHERE is_public = true ORDER BY created_at DESC LIMIT 3');
         $stmt->execute();
         $quizzes = $stmt->fetchAll(PDO::FETCH_OBJ);
         return $quizzes;

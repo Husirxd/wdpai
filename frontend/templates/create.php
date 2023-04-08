@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <title>Create Quiz</title>
-</head>
 <?php
-
 session_start();
 //check if user is logged in
 if(!isset($_SESSION["user"])){
@@ -18,8 +12,7 @@ if(isset($messages)){
     }
 }
 ?>
-<body>
-    <?php include_once(__DIR__."/../components/header.php"); ?>
+
     <div class="container">
         <div class="create-container">
             <form `class="create" action="create"` method="POST" id="create-quiz" enctype="multipart/form-data">
@@ -57,6 +50,5 @@ if(isset($messages)){
         </div>
     </div>
         <script src="/frontend/assets/scripts/script.js"></script>
-</body>
-</html>
+
 
