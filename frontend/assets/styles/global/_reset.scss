@@ -34,12 +34,23 @@ input, textarea{
     font-size:1.5;
     color: #222;
     background: white;
+    transition: all 0.3s ease-in-out;
     &:focus{
         outline: none;
     }
-    &:hover{
+    &:hover, &:focus{
+        border-color: transparent;
         box-shadow: 0 4px 15px rgba(58, 133, 255, 0.705);
     }
+}
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 1em;
+}
+.checkbox-label{
+    display: flex;
+    align-items: center;
 }
 
 .container{
@@ -48,6 +59,9 @@ input, textarea{
     width: 70vw;
     @include to(1366px){
         width: 85vw;
+    }
+    &--sm{
+        max-width: 1100px;
     }
 }
 
@@ -67,7 +81,8 @@ input, textarea{
 }
 
 .button{
-    padding: 1ch 2ch;
+    padding: 1ch 3ch;
+    padding-top: calc(1ch + 2px);
     border: none;
     border-radius: 100px;
     background: $azure;
@@ -75,11 +90,22 @@ input, textarea{
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition:all 0.3s ease-in-out;
     &:hover{
         background: $azure;
         scale: 1.05;
         box-shadow: 0 4px 15px rgba(58, 133, 255, 0.705);
+    }
+    &--secondary{
+        background-color: transparent;
+        border: 1px solid $azure;
+        color:$azure;
+        &:hover{
+            color:white;
+        }
     }
 }
 

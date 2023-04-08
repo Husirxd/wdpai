@@ -3,7 +3,13 @@
 @import "./global/reset";
 
 @import "./partials/quiz-tile";
+@import "./partials/header";
+@import "./partials/footer";
+
 
 @import "./pages/home";
 @import "./pages/quiz";
 @import "./pages/login";
+@import "./pages/register";
+@import "./pages/create";
+@import "./pages/archive";
