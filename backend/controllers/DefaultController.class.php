@@ -14,7 +14,10 @@ class DefaultController extends AppController {
             $this->render('quiz', ['quiz' =>$_GET["quiz"]]);
             exit;
         }
+    }
 
+    public function archive(){
+        $this->render('archive', ['title' => 'Kogoot - All Quizzes']);
     }
 
     public function results(){

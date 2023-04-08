@@ -65,6 +65,10 @@ input[type="checkbox"]{
     }
 }
 
+img{
+    width: 100%;
+}
+
 .quizzes{
     &__grid{
         margin-top: 2em;
@@ -107,6 +111,22 @@ input[type="checkbox"]{
             color:white;
         }
     }
+    &--dark{
+        min-width: 200px;
+        border-radius:20px;
+        background: transparent;
+        border: 1px solid #222;
+        padding: 1ch 2ch;
+        color:#222;
+        font-weight: bold;
+        font-size: 1em;
+        cursor: pointer;
+        font-family: "Montserrat";
+        &:hover{
+            background: transparent;
+            box-shadow: 0 4px 15px rgba(97, 97, 97, 0.705);
+        }
+    }
 }
 
 .flex{
@@ -131,3 +151,32 @@ input[type="checkbox"]{
         color:$azure;
     }
 }
+
+.info{
+    color: #222;
+    a{
+        color:$azure;
+    }
+}
+
+
+.button-gradient{
+    box-shadow:0 4px 11px 1px #00000044;
+    color:white;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    cursor:pointer;
+    font-size:20px;
+    border:none;
+    background: rgb(238,174,202);
+    padding: 1ch 4ch;
+    border-radius:50px;
+    background-size:200% 200%;
+    background-position: 0 0;
+    transition:scale 0.2s ease-in-out;
+  }
+  button:hover{
+    scale:1.1;
+  }
+  

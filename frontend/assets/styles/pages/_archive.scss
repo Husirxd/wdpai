@@ -1,0 +1,14 @@
+.archive{
+    .quizzes{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+        @include to(1366px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include to(768px){
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+    }
+}

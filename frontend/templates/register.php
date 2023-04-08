@@ -1,11 +1,6 @@
-<?php
-
-?>
-
-<body>
-    <?php include_once(__DIR__."/../components/header.php"); ?>
     <div class="container">
-        <div class="register-container">
+        <div class="register-container login-container">
+            <h1 class="heading text-blue"><span>Hi! </span>Nice to meet you.</h1>
             <form class="register" action="register" method="POST">
                 <div class="messages">
                     <?php
@@ -20,8 +15,8 @@
                 <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <input name="display_name" type="text" placeholder="display name">
-                <button type="submit">LOGIN</button>
+                <div class="flex flex--center"><button class="button" type="submit">LOGIN</button></div>
+                <p class="info">Do I know you from somewhere? <a href="/login/">Yea! Let me login real' quick.</a></p>
             </form>
         </div>
     </div>
-</body>

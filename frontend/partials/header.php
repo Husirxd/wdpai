@@ -11,7 +11,7 @@
 <header>
     <div class="container">
         <div class="logo">
-            <img src="public/img/logo.svg">
+            KOGOOT
         </div>
         <div class="menu">
             <ul>

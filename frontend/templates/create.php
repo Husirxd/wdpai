@@ -53,10 +53,10 @@ if(isset($messages)){
                                 <span class="remove-answer">×</span>
                             </div>
                         </div>
-                        <button type="button" class="add-answer">ADD ANSWER</button>
+                        <button  type="button" class="add-answer button button--dark">ADD ANSWER</button>
                     </div>
                 </div>
-                <div class="flex"><button class="add-question button button--secondary" type="button">ADD QUESTION</button></div>
+                <div class="flex add-q-container"><button class="add-question button button--dark" type="button">ADD QUESTION</button></div>
                 <div class="flex flex--center"><button class="button" type="submit">CREATE</button></div>
             
             

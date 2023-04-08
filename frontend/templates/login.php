@@ -20,6 +20,7 @@ if($_SESSION['user'] != null){
                 <input name="login_email" type="text" placeholder="email@email.com">
                 <input name="login_password" type="password" placeholder="password">
                 <div class="flex flex--center"><button class="button" type="submit">LOGIN</button></div>
+                <p class="info">Oops. I mistook you for someone else  <a href="/register/">No problem, i'll create account!</a></p>
             </form>
         </div>
     </div>

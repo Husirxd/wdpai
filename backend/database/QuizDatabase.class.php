@@ -32,13 +32,6 @@ class QuizDatabase extends Database {
         return $quiz;
     }
 
-    public function getQuizByCategory($category){
-        $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE category = :category');
-        $stmt->bindParam(':category', $category, PDO::PARAM_STR);
-        $stmt->execute();
-        $quiz = $stmt->fetchAll(PDO::FETCH_OBJ);
-        return $quiz;
-    }
 
     public function getQuizByUser($user_id){
         $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE user_id = :user_id');
@@ -58,20 +51,24 @@ class QuizDatabase extends Database {
 
     }
 
-    public function deleteQuizById($id){
-        $stmt = $this->connect()->prepare('DELETE FROM quizzes WHERE id = :id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+    public function getQuizzes($offset = 0, $limit = 9, $options = []){
+        $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE is_public = true ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
+        $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
+        $quizzes = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $quizzes;
     }
 
-    public function updateQuiz($id, $title, $category, $is_public){
-        $stmt = $this->connect()->prepare('UPDATE quizzes SET title = :title, category = :category, is_public = :is_public WHERE id = :id');
-        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
-        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
-        $stmt->bindParam(':category', $category, PDO::PARAM_STR);
-        $stmt->bindParam(':is_public', $is_public, PDO::PARAM_STR);
+    public function getQuizzesRandom(){
+        $stmt = $this->connect()->prepare('SELECT id FROM quizzes WHERE is_public = true ORDER BY RANDOM() LIMIT 3');
         $stmt->execute();
+        $quizzes = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $quizzes;
     }
+
+
 }
+
 
 ?>

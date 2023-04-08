@@ -20,3 +20,14 @@ const SolveQuiz = () => {
         }
     }
 SolveQuiz();
+
+//check if .button-gradient exists
+const KoxCzycisk = () => {
+    if(document.querySelector(".button-gradient")) {
+        console.log('kox');
+        import("./kox-czycisk.js").then((module) => {
+            module.koxCzycisk();
+        });
+    }
+}
+KoxCzycisk();
