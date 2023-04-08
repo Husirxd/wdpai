@@ -8,15 +8,16 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="logo">
-            KOGOOT
+<header class="header">
+        <div class="header__logo">
+            <a href="/">KOGOOT</a>
         </div>
-        <div class="menu">
+        <div class="header__menu">
             <ul>
-                <li><a href="projects">PROJECTS</a></li>
-                <li><a href="login">LOGIN</a></li>
+                <li><a href="/archive/">Quizzes</a></li>
             </ul>
+        </div>
+        <div class="header__button">
+            <a href="/create" class="button-gradient">Add Quiz</a>
         </div>
 </header>

@@ -10,9 +10,9 @@ export function koxCzycisk(){
     circle.angle = 0;  
     let x = 1;
 
-    let bg = setInterval(moveBackground,100);
+    let bg = setInterval(moveBackground,250);
     button.addEventListener("mouseout",(e)=>{
-        bg = setInterval(moveBackground,100);
+        bg = setInterval(moveBackground,250);
     });
 
 button.addEventListener("mousemove",(e)=>{
@@ -27,11 +27,11 @@ button.addEventListener("mousemove",(e)=>{
 
     function moveBackground(){
 
-        circle.angle = (circle.angle+0.2)%360;
+        circle.angle = (circle.angle+0.1)%360;
         circle.x = circle.r*(Math.cos(circle.angle));
         circle.y = circle.r*(Math.sin(circle.angle));
         button.style.backgroundPosition = `${50+circle.x}% ${50+circle.y}% `;
-        button.style.backgroundImage = `linear-gradient(${10*circle.angle}deg, rgba(255,121,180,1) 0%, rgba(106,174,255,1) 100%)`
+        button.style.backgroundImage = `linear-gradient(${30+10*circle.angle}deg, #ff006eff 0%, #3a86ffff 100%)`
     }
 }
 

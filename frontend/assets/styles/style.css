@@ -7,6 +7,10 @@ body {
   color: white;
 }
 
+main {
+  padding-top: 100px;
+}
+
 * {
   font-family: 'Hind', sans-serif;
   padding: 0;
@@ -208,10 +212,11 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1em;
   border: none;
   background: #eeaeca;
   padding: 1ch 4ch;
+  padding-top: calc(1ch + 2px);
   border-radius: 50px;
   background-size: 200% 200%;
   background-position: 0 0;
@@ -300,6 +305,7 @@ button:hover {
   background: white;
   text-transform: uppercase;
   padding: 0.5em 1em;
+  padding-top: calc(0.5em + 2px);
   font-size: 14px;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
@@ -309,12 +315,87 @@ button:hover {
   color: #222;
 }
 
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4em 5vw;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  left: 0;
+  z-index: 100;
+  background-color: #111;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  right: 0;
+  gap: 1em;
+}
+
+.header__logo a {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+}
+
+.header__menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  list-style: none;
+}
+
+.header__menu ul li a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header__button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+footer {
+  min-height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .home {
   overflow: hidden;
 }
 
 .home section {
-  margin-bottom: 4em;
+  margin-bottom: 6em;
 }
 
 .home .hero {

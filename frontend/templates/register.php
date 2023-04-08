@@ -1,3 +1,4 @@
+<main>
     <div class="container">
         <div class="register-container login-container">
             <h1 class="heading text-blue"><span>Hi! </span>Nice to meet you.</h1>
@@ -20,3 +21,4 @@
             </form>
         </div>
     </div>
+</main>

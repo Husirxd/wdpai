@@ -12,10 +12,10 @@ if(isset($messages)){
     }
 }
 ?>
-
+<main class="page">
     <div class="container container--sm">
         <div class="create-container">
-            <form `class="create" action="create"` method="POST" id="create-quiz" enctype="multipart/form-data">
+            <form class="create" action="create" method="POST" id="create-quiz" enctype="multipart/form-data">
                 <div class="wide"><input name="title" type="text" placeholder="title"></div>
                 <div class="quiz-data">
                     <div class="quiz-info">
@@ -58,11 +58,7 @@ if(isset($messages)){
                 </div>
                 <div class="flex add-q-container"><button class="add-question button button--dark" type="button">ADD QUESTION</button></div>
                 <div class="flex flex--center"><button class="button" type="submit">CREATE</button></div>
-            
-            
             </form>
         </div>
     </div>
-        <script src="/frontend/assets/scripts/script.js"></script>
-
-
+</main>

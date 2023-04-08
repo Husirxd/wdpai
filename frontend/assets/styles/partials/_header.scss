@@ -1,0 +1,42 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4em 5vw;
+    position: fixed;
+    top:0;
+    height: 80px;
+    left:0;
+    z-index: 100;
+    background-color: #111;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    right: 0;
+    gap:1em;
+    &__logo{
+        a{
+            font-size: 1.5em;
+            font-weight: 700;
+            color: white
+        }
+    }
+    &__menu{
+        ul{
+            display: flex;
+            align-items: center;
+            gap:1em;
+            list-style: none;
+            li a{
+                color: white;
+                font-size: 1.2em;
+                font-weight: 500;
+                text-decoration: none;
+                font-family: "Montserrat", sans-serif;
+            }
+        }
+    }
+    &__button{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

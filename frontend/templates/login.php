@@ -4,6 +4,7 @@ if($_SESSION['user'] != null){
     header("Location: /");
 }
 ?>
+<main>
     <div class="container">
         <div class="login-container">
             <form class="login" action="login" method="POST">
@@ -24,3 +25,4 @@ if($_SESSION['user'] != null){
             </form>
         </div>
     </div>
+</main>

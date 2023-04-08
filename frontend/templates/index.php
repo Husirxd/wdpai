@@ -36,6 +36,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
             }
             ?>
         </div>
+        <div class="flex flex--center"><a href="/archive" class="button">See all</a></div>
     </section>
     <section class="create-quiz container">
         <div class="image">
@@ -43,7 +44,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
         </div>
         <div class="create-quiz__text flex flex--center">
             <h2>Create your own quiz.</h2>
-            <a href="/create-quiz" class="button-gradient">Create</a>
+            <a href="/create/" class="button-gradient">Create</a>
         </div>
         </section>
     <section class="quizzes container">
@@ -67,4 +68,3 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
         <p>A ja odpowiadam, że to proste, to umiłowanie życia, to właśnie ono sprawia, że dzisiaj na przykład buduję maszyny, a jutro... kto wie, dlaczego by nie, oddam się pracy społecznej i będę ot, choćby sadzić... znaczy... marchew.</p>
     </section>
 </main>
-<script src="/frontend/assets/scripts/script.js"></script>

@@ -30,6 +30,7 @@ class AppController {
             ob_start();
             include_once 'frontend/partials/header.php';
             include $templatePath;
+            include_once 'frontend/partials/footer.php';
             $output = ob_get_clean();
         }
         print $output;
