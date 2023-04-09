@@ -36,7 +36,7 @@ if(isset($messages)){
                         <input type="hidden" name="correct-0" class="question__correct" value="0">
                         <div class="question__top">
                             <input class="question__question" name="question-0"  type="text" placeholder="question">
-                            <input type="number" min="0" max="68" placeholder="Set Points" class="question__points" name="points-0">
+                            <input type="number" min="0" max="68" placeholder="Set Points" value="1" class="question__points" name="points-0">
                         </div>
                         <div class="question-thumbnail">
                             <img src="/frontend/assets/images/placeholder.png" alt="preview" class="thumbnail-preview">

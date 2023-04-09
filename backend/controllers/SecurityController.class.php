@@ -74,23 +74,25 @@ class SecurityController extends AppController {
 
 
     public function create(){
-   
+ 
         if(!$this->isPost()){
             return $this->render('create');
         }
-        if(isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["is_public"])){
+        if(isset($_POST["title"]) && isset($_POST["category"])){
             $title = $_POST["title"];
             $category = $_POST["category"];
-            $is_public = $_POST["is_public"];
+            $is_public = isset($_POST["is_public"]) ? 1 : 0;
             //get thumbnail file and save it to server folder /uploads/user_id
-        
+     
             $fileManager = FileManager::getInstance();
             $thumbnail_url = null;
             $thumbnail = $_FILES["thumbnail"];
+            
             $thumbnail_url =  $fileManager->uploadFile($thumbnail, $_SESSION["user"]);
 
             $quizDatabase = new QuizDatabase();
-            $quiz = $quizDatabase->CreateQuiz($title, $category, $is_public,$thumbnail_url);
+            
+            $quiz = $quizDatabase->CreateQuiz($title, $category, $is_public, $thumbnail_url);
 
             if($quiz){
                 $quiz_id = $quiz->id;

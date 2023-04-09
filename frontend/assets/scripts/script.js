@@ -31,3 +31,8 @@ const KoxCzycisk = () => {
     }
 }
 KoxCzycisk();
+
+document.querySelector(".header__hamburger").addEventListener("click", (e) => {
+    document.querySelector(".mobile-menu").classList.toggle("mobile-menu--active");
+});
+

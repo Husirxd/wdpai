@@ -20,4 +20,15 @@
         <div class="header__button">
             <a href="/create" class="button-gradient">Add Quiz</a>
         </div>
+        <div class="header__hamburger">
+            <img src="/frontend/assets/images/menu-icon.svg" width="20">
+        </div>
 </header>
+<div class="mobile-menu">
+    <ul>
+        <li><a href="/archive/">Quizzes</a></li>
+    </ul>
+    <div>
+            <a href="/create" class="button button-gradient">Add Quiz</a>
+    </div>
+</div>
