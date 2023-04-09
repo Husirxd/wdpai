@@ -2,13 +2,13 @@
 require_once "backend/models/Question.class.php";
 class Quiz {
     private $id;
-    private $created_at;
     private $user_id;
 
     public $title;
     public $category;
     public $thumbnail;
     public $questions;
+    public $created_at;
 
 
     public function __construct($quiz_id){
@@ -57,6 +57,11 @@ class Quiz {
     public function getUserId(): int 
     {
         return $this->user_id;
+    }
+
+    public function getThumbnail(): string 
+    {
+        return "/backend/".$this->thumbnail;
     }
 
 }

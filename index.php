@@ -9,6 +9,7 @@ Router::get('', 'DefaultController');
 Router::get('create', 'SecurityController');
 Router::get('logout', 'SecurityController');
 Router::get('quiz', 'DefaultController');
+Router::get('archive', 'DefaultController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');

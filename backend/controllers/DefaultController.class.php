@@ -6,7 +6,7 @@ require_once "backend/database/QuizDatabase.class.php";
 class DefaultController extends AppController {
 
     public function index(){
-        $this->render('index');
+        $this->render('index', ['title' => 'Kogoot - Home']);
     }
 
     public function quiz(){
@@ -14,7 +14,10 @@ class DefaultController extends AppController {
             $this->render('quiz', ['quiz' =>$_GET["quiz"]]);
             exit;
         }
+    }
 
+    public function archive(){
+        $this->render('archive', ['title' => 'Kogoot - All Quizzes']);
     }
 
     public function results(){
@@ -32,7 +35,7 @@ class DefaultController extends AppController {
                     $score += $question->points;
                 }
             }
-            $this->render('results', ['quiz' => $quiz, 'score' => $score, 'max_score' => $max_score]);
+            $this->render('results', ['quiz' => $quiz, 'score' => $score, 'max_score' => $max_score, $title => 'Results']);
         }else{
             header("Location: /");
         }
