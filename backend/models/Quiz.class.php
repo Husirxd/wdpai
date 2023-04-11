@@ -11,6 +11,7 @@ class Quiz {
     public $thumbnail;
     public $questions;
     public $created_at;
+    public $author;
 
 
     public function __construct($quiz_id){
@@ -27,6 +28,7 @@ class Quiz {
         $this->created_at = $quiz->created_at;
         $this->user_id = $quiz->user_id;
         $this->thumbnail = $quiz->thumbnail;
+        $this->author = $quiz->display_name;
 
         $this->questions = null;
         $questionsDatabase = new QuestionDatabase();

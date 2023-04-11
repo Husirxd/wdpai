@@ -25,10 +25,12 @@ class QuizDatabase extends Database {
 
     public function getQuizById($id){
 
-        $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE id = :id');
+        $stmt = $this->connect()->prepare('SELECT quizzes.*, users.display_name FROM quizzes INNER JOIN quizzes_owners ON quizzes.id = quizzes_owners.quiz_id INNER JOIN users ON quizzes_owners.user_id = users.id WHERE quizzes.id = :id');
+        //$stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE id = :id');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
         $quiz = $stmt->fetch(PDO::FETCH_OBJ);
+
         return $quiz;
     }
 
