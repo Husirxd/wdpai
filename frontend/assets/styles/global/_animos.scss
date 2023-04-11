@@ -1,0 +1,144 @@
+[data-anim="fadeUpGrid"]{
+    opacity: 1;
+    &>*{
+        transform: translateY(100px);
+    }
+    &.animate{
+        &>*{
+            animation: basicAnimation 0.5s ease-in-out forwards, fadeUp 0.5s ease-in-out forwards;
+        }
+    }
+}
+[data-anim="fadeRightGrid"]{
+    &>*{
+        opacity: 0;
+    }
+    &.animate{
+        &>*{
+            animation: basicAnimation 0.5s ease-in-out forwards, fadeRight 0.5s ease-in-out forwards;
+        }
+    }
+}
+
+
+[data-anim="fadeUp"]{
+    transform: translateY(100px);
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeUp 0.5s ease-in-out forwards;
+    }
+}
+
+[data-anim="fadeDown"]{
+    transform: translateY(-100px);
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeDown 0.5s ease-in-out forwards;
+    }
+}
+[data-anim="fadeDown"],[data-anim="fadeIn"],[data-anim="fadeUp"],[data-anim="fadeRight"]{
+    opacity: 0;
+}
+[data-anim="fadeIn"]{
+    scale: 0.8;
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeIn 0.5s ease-in-out forwards;
+    }
+}
+
+[data-anim="fadeRight"]{
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeRight 0.5s ease-in-out forwards;
+    }
+}
+[data-anim="fadeLeft"]{
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeRight 0.5s ease-in-out forwards;
+    }
+}
+[data-anim="animWidth"]{
+    overflow: hidden;
+    max-width: 0;
+    &.animate{
+        animation: animWidth 0.5s ease-in-out forwards;
+    }
+}
+
+[data-anim="fadeUpIn"]{
+    transform: translateY(80px);
+    scale: 0.8;
+    opacity: 0;
+    &.animate{
+        animation: basicAnimation 0.5s ease-in-out forwards, fadeUpIn 0.5s ease-in-out forwards;
+    }
+}
+
+span[data-anim],a[data-anim]{
+display: inline-block;
+}
+
+@keyframes basicAnimation {
+    from{
+        opacity: 0;
+        filter: blur(5px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes animWidth{
+    from{
+        max-width: 0px;
+    }
+    to{
+        max-width:100%;
+    }
+}
+
+
+@keyframes fadeUp {
+    from{transform: translateY(100px);}
+    to{transform: translateY(0);}
+}
+@keyframes fadeDown {
+    from{transform: translateY(-100px);}
+    to{transform: translateY(0);}
+}
+@keyframes fadeRight {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);}
+    to{
+        opacity: 1;
+        transform: translateX(0);}
+}
+@keyframes fadeLeft {
+    from{
+        opacity: 0;
+        transform: translateX(100px);}
+    to{
+        opacity: 1;
+        transform: translateX(0);}
+}
+
+@keyframes fadeIn {
+    from{scale: 0.8;}
+    to{scale: 1;}
+}
+
+@keyframes fadeUpIn {
+    0%{
+        transform: translateY(80px);
+        scale: 0.9;
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(0);
+        scale: 0.9;
+    }
+    100%{
+        scale: 1;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

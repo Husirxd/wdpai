@@ -17,7 +17,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
             <img src="/frontend/assets/images/chubbs/chubbs-hello.svg">
         </div>
         <div class="hero__text">
-            <h1>Kogoot</h1>
+            <h1 ">Kogoot</h1>
             <ul>
                 <li>Explore</li>
                 <li>Create</li>
@@ -28,7 +28,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
     </section>
     <section class="quizzes container">
         <h2>Added recently.</h2>
-        <div class="quizzes__grid">
+        <div data-anim="fadeUpGrid" data-anim-step="80" class="quizzes__grid">
             <?php
             foreach($quizzesRecent as $quiz){
                 $quizObj = new Quiz($quiz->id);
@@ -39,7 +39,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
         <div class="flex flex--center"><a href="/archive" class="button">See all</a></div>
     </section>
     <section class="create-quiz container">
-        <div class="image">
+        <div class="image" data-anim="fadeIn">
             <img src="/frontend/assets/images/chubbs/tutel.png">
         </div>
         <div class="create-quiz__text flex flex--center">
@@ -49,7 +49,7 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
         </section>
     <section class="quizzes container">
         <h2>Recommended.</h2>
-        <div class="quizzes__grid">
+        <div class="quizzes__grid" data-anim="fadeUpGrid" data-anim-step="80">
         <?php
             foreach($quizzesRandom as $quiz){
                 $quizObj = new Quiz($quiz->id);

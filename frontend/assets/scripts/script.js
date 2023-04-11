@@ -1,4 +1,3 @@
-
 const CreateQuiz = () => {
 
     if(document.querySelector("#create-quiz")) {
@@ -36,3 +35,11 @@ document.querySelector(".header__hamburger").addEventListener("click", (e) => {
     document.querySelector(".mobile-menu").classList.toggle("mobile-menu--active");
 });
 
+const startAnimations = () => {
+    if(document.querySelector("[data-anim]")) {
+        import("./animos.js").then((module) => {
+            let animos = new module.AnimOS();
+        });
+    }
+}
+startAnimations();

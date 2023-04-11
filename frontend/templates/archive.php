@@ -8,7 +8,7 @@ $quizzesRecent = $quizDatabase->getQuizzes();
     <section class="archive container">
         <div class="filters">
         </div>
-        <div class="quizzes" id="quizzes">
+        <div class="quizzes" id="quizzes" data-anim="fadeUpGrid" data-anim-step="80">
             <?php
                 foreach($quizzesRecent as $quiz){
                     $quizObj = new Quiz($quiz->id);
