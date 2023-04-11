@@ -23,15 +23,15 @@ class DefaultController extends AppController {
     public function results(){
         if(isset($_POST['quiz_id'])){
             $quizDatabase = new QuizDatabase();
-            var_dump($_POST['quiz_id']);
             $quiz = new Quiz($_POST['quiz_id']);
             $questionsDatabase = new QuestionDatabase();
             $questions = $questionsDatabase->getQuestionsByQuizId($quiz->getId());
             $score = 0;
             $max_score = 0;
+
             foreach($questions as $key => $question){
                 $max_score += $question->points;
-                if($question->correct_answer == $_POST['chosen_answer'].$key){
+                if($question->correct_answer == $_POST['chosen_answer'.$key]){
                     $score += $question->points;
                 }
             }

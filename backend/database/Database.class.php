@@ -6,7 +6,6 @@ class Database{
     private $username = "adamczykus";
     private $password = '@W5SYwTHWj$Xc&W#v3zP';
     private $database = "adamczykus";
-    private $port = "32768";
     private $connection_string = 'postgres://adamczykus:@W5SYwTHWj$Xc&W#v3zP@srv2.kuboit.pl:32768';
     private $connection;
 

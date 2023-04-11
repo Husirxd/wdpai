@@ -1,4 +1,3 @@
-
 const CreateQuiz = () => {
     if(document.querySelector("#create-quiz")) {
         import("./create-quiz.js").then((module) => {
@@ -32,6 +31,17 @@ document.querySelector(".header__hamburger").addEventListener("click", (e) => {
     document.querySelector(".mobile-menu").classList.toggle("mobile-menu--active");
 });
 
+const startAnimations = () => {
+    if(document.querySelector("[data-anim]")) {
+        import("./animos.js").then((module) => {
+            let animos = new module.AnimOS({
+                infinite: false,
+                rootMargin: "10%"
+            });
+        });
+    }
+}
+startAnimations();
 
 const archiveQuiz = () => {
     if(document.querySelector("#archive-quiz")) {

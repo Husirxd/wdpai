@@ -30,15 +30,20 @@
                         color: #222;
                     }
                 }
+                img{
+                    max-height: 450px;
+                    object-fit: contain;
+                    margin-bottom: 1em;
+                }            
                 &__answers{
                     display: grid;
                     grid-template-columns: repeat(2,1fr);
-                    gap: 1em;
+                    gap: .4em;
 
                     .answer{
 
                         padding: 1em;
-                        border-radius: 20px;
+                        border-radius: 10px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
