@@ -6,6 +6,7 @@ $quizzesRecent = $quizDatabase->getQuizzes();
 ?>
 <main>
     <section class="archive container" id="archive-quiz">
+        <h1>All Quizzes!</h1>
         <div class="filters">
             <div>
             <input type="text" placeholder="Search..." id="search">

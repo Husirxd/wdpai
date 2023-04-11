@@ -34,7 +34,10 @@ document.querySelector(".header__hamburger").addEventListener("click", (e) => {
 const startAnimations = () => {
     if(document.querySelector("[data-anim]")) {
         import("./animos.js").then((module) => {
-            let animos = new module.AnimOS();
+            let animos = new module.AnimOS({
+                infinite: false,
+                rootMargin: "10%"
+            });
         });
     }
 }

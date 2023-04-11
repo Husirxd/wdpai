@@ -235,6 +235,7 @@ button:hover {
 [data-anim="fadeUpGrid"] > * {
   -webkit-transform: translateY(100px);
           transform: translateY(100px);
+  opacity: 0;
 }
 
 [data-anim="fadeUpGrid"].animate > * {
@@ -1015,17 +1016,24 @@ footer {
   color: #222;
 }
 
+#solve-quiz .quiz .questions .question img {
+  max-height: 450px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 1em;
+}
+
 #solve-quiz .quiz .questions .question__answers {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
+  gap: .4em;
 }
 
 #solve-quiz .quiz .questions .question__answers .answer {
   padding: 1em;
-  border-radius: 20px;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

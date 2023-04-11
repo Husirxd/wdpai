@@ -14,21 +14,20 @@ $quizzesRandom = $quizDatabase->getQuizzesRandom();
 <main class="home">
     <section class="hero">
         <div class="hero__image">
-            <img src="/frontend/assets/images/chubbs/chubbs-hello.svg">
+            <img data-anim="fadeRight" data-anim-delay="1000" src="/frontend/assets/images/chubbs/chubbs-hello.svg">
         </div>
         <div class="hero__text">
-            <h1 ">Kogoot</h1>
-            <ul>
+            <h1>Kogoot</h1>
+            <ul data-anim="fadeUpGrid" data-anim-step="120">
                 <li>Explore</li>
                 <li>Create</li>
                 <li>Resolve</li>
             </ul>
-
         </div>
     </section>
     <section class="quizzes container">
         <h2>Added recently.</h2>
-        <div data-anim="fadeUpGrid" data-anim-step="80" class="quizzes__grid">
+        <div data-anim="fadeUpGrid" data-anim-step="400" class="quizzes__grid">
             <?php
             foreach($quizzesRecent as $quiz){
                 $quizObj = new Quiz($quiz->id);
