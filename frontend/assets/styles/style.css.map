@@ -15,7 +15,8 @@
         "pages/_login.scss",
         "pages/_register.scss",
         "pages/_create.scss",
-        "pages/_archive.scss"
+        "pages/_archive.scss",
+        "pages/_results.scss"
     ],
     "names": [],
     "file": "style.css"

@@ -52,6 +52,17 @@ class QuizDatabase extends Database {
     }
 
     public function getQuizzes($offset = 0, $limit = 9, $options = []){
+
+        if(isset($options['search'])){
+            $title = '%'.$options['search'].'%';
+            $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE is_public = true AND title LIKE :title ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
+            $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+            $stmt->execute();
+            $quizzes = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return $quizzes;
+        }
         $stmt = $this->connect()->prepare('SELECT * FROM quizzes WHERE is_public = true ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
         $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);

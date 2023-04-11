@@ -1,7 +1,5 @@
 const CreateQuiz = () => {
-
     if(document.querySelector("#create-quiz")) {
-   
         import("./create-quiz.js").then((module) => {
             module.createQuiz();
         });
@@ -10,9 +8,7 @@ const CreateQuiz = () => {
 CreateQuiz();
 
 const SolveQuiz = () => {
-    
         if(document.querySelector("#solve-quiz")) {
-    
             import("./solve-quiz.js").then((module) => {
                 module.solveQuiz();
             });
@@ -43,3 +39,12 @@ const startAnimations = () => {
     }
 }
 startAnimations();
+
+const archiveQuiz = () => {
+    if(document.querySelector("#archive-quiz")) {
+        import("./archive-quiz.js").then((module) => {
+            module.archiveQuiz();
+        });
+    }
+}
+archiveQuiz();

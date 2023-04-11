@@ -5,8 +5,11 @@ $quizzesRecent = $quizDatabase->getQuizzes();
 
 ?>
 <main>
-    <section class="archive container">
+    <section class="archive container" id="archive-quiz">
         <div class="filters">
+            <div>
+            <input type="text" placeholder="Search..." id="search">
+            </div>
         </div>
         <div class="quizzes" id="quizzes" data-anim="fadeUpGrid" data-anim-step="80">
             <?php
@@ -16,5 +19,6 @@ $quizzesRecent = $quizDatabase->getQuizzes();
                 }
             ?>
         </div>
+        <div class="flex flex--center"><button class="button load-more">Load More</div>
     </section>
 </main>

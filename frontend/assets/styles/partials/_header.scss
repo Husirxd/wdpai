@@ -65,12 +65,12 @@
     bottom: 0;
     padding-left: 2em;
     padding-top: 2em;
-    background-color: #111111aa;
+    background-color: #111111ee;
     z-index: 100;
-    transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
+    display: none;
     &--active{
-        transform: translateX(0);
+        display: block;
     }
 
     ul{
