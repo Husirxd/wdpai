@@ -1,5 +1,7 @@
 <?php 
-require_once "backend/models/Question.class.php";
+require_once __DIR__."/Question.class.php";
+require_once __DIR__."/../database/QuizDatabase.class.php";
+require_once __DIR__."/../database/QuestionDatabase.class.php";
 class Quiz {
     private $id;
     private $user_id;

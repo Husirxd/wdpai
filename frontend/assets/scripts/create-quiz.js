@@ -22,7 +22,7 @@ export function createQuiz() {
             questionInput.name = `question-${questionNumber}`;
 
             const imageInput = question.querySelector(".question__image");
-            imageInput.name = `image-${questionNumber}`;
+            imageInput.name = `image_url-${questionNumber}`;
 
             const poinsInput = question.querySelector(".question__points");
             poinsInput.name = `points-${questionNumber}`;
