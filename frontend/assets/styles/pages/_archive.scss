@@ -1,4 +1,14 @@
 .archive{
+    .filters{
+        background-color: white;
+        border-radius: 10px;
+        padding: 1em;
+        display: flex;
+        gap: 1em;
+        justify-content: space-between;
+        margin: 2em 0;
+        box-shadow: 0px 4px 11px 1px #aaaaaa15;
+    }
     .quizzes{
         display: grid;
         grid-template-columns: repeat(3, 1fr);

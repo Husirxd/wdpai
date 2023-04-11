@@ -6,7 +6,7 @@ require_once __DIR__ ."/../database/UserDatabase.class.php";
 require_once __DIR__ ."/../database/QuizDatabase.class.php";
 require_once __DIR__ ."/../database/QuestionDatabase.class.php";
 require_once __DIR__ ."/FileController.class.php";
-
+require_once __DIR__ ."/../database/OwnerDatabase.class.php";
 
 
 session_start();
@@ -96,6 +96,10 @@ class SecurityController extends AppController {
 
             if($quiz){
                 $quiz_id = $quiz->id;
+
+                $ownershipDatabase = new OwnerDatabase();
+                $ownershipDatabase->addOwnership($quiz_id,$_SESSION["user"], 1);
+
                 $questionDatabase = new QuestionDatabase();
 
                 $question_count = $_POST['question_count'];
@@ -124,7 +128,7 @@ class SecurityController extends AppController {
                 header("Location: /");
             }
             else{
-                $messages[] = "Quiz with this title already exists";
+                $messages[] = " Something went wrong";
                 return $this->render('create', ['messages' => $messages]);
             }
         }
