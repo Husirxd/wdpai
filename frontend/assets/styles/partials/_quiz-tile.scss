@@ -58,6 +58,11 @@
         font-family: "Montserrat", sans-serif;
         p{
             color:#222;
+            span{
+                @include to(1150px){
+                    display: none;
+                }
+            }
         }
     }
 

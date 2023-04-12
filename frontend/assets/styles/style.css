@@ -606,6 +606,12 @@ span[data-anim], a[data-anim] {
   color: #222;
 }
 
+@media screen and (max-width: 1149px) {
+  .quiz-tile__date p span, .quiz-tile__category p span {
+    display: none;
+  }
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1086,6 +1092,15 @@ footer #newsletter .newsletter-thanks h2 {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 2em;
+}
+
+@media screen and (max-width: 1023px) {
+  #solve-quiz .hero {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #solve-quiz .hero > * {

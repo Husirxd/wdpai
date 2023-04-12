@@ -7,7 +7,7 @@ function createTile($quiz){
     <div class="quiz-tile">
     <div class="quiz-tile__header">
         <div class="quiz-tile__date">
-        <p><?php echo date("d m Y", strtotime($quiz->created_at)) ?> by <?php echo $quiz->author ?></p>
+        <p><span><?php echo date("d m Y", strtotime($quiz->created_at)) ?></span> by <?php echo $quiz->author ?></p>
        
         </div>
         <div class="quiz-tile__category">
