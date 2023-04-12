@@ -1,2 +1,4 @@
 /backend/uploads
 .idea
+.env
+/vendor

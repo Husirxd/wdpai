@@ -733,7 +733,8 @@ span[data-anim], a[data-anim] {
 }
 
 footer {
-  min-height: 30vh;
+  margin-top: 5em;
+  min-height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -747,6 +748,90 @@ footer {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+footer #newsletter {
+  background-color: aliceblue;
+  background-image: url("../images/newsletter.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 1023px) {
+  footer #newsletter {
+    background-size: 80%;
+    background-position-x: 200%;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  footer #newsletter {
+    background-size: 150%;
+    background-position: 10% 50px;
+  }
+}
+
+footer #newsletter .newsletter-form {
+  padding: 3em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1em;
+}
+
+footer #newsletter .newsletter-form h2 {
+  color: #222;
+  text-align: center;
+}
+
+footer #newsletter .newsletter-form--hidden {
+  display: none;
+}
+
+footer #newsletter .newsletter-thanks {
+  min-height: 400px;
+  padding: 3em 0;
+  display: none;
+}
+
+footer #newsletter .newsletter-thanks--visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #newsletter .newsletter-thanks h2 {
+  color: #222;
+  text-align: center;
+  font-size: 3em;
+}
+
+@media screen and (max-width: 1023px) {
+  footer #newsletter .newsletter-thanks h2 {
+    font-size: 2em;
+  }
 }
 
 .home {
