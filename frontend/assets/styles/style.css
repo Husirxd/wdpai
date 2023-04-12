@@ -773,6 +773,12 @@ footer #newsletter {
   }
 }
 
+@media screen and (max-width: 449px) {
+  footer #newsletter {
+    background-position: -40% 50px;
+  }
+}
+
 footer #newsletter .newsletter-form {
   padding: 3em 0;
   display: -webkit-box;
@@ -806,6 +812,12 @@ footer #newsletter .newsletter-thanks {
   display: none;
 }
 
+@media screen and (max-width: 649px) {
+  footer #newsletter .newsletter-thanks {
+    min-height: 200px;
+  }
+}
+
 footer #newsletter .newsletter-thanks--visible {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -831,6 +843,12 @@ footer #newsletter .newsletter-thanks h2 {
 @media screen and (max-width: 1023px) {
   footer #newsletter .newsletter-thanks h2 {
     font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  footer #newsletter .newsletter-thanks h2 {
+    font-size: 1em;
   }
 }
 

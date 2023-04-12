@@ -21,6 +21,9 @@ footer{
             background-size:150%;
             background-position:10% 50px; 
         }
+        @include to(450px){
+            background-position:-40% 50px; 
+        }
         .newsletter-form{
             padding: 3em 0;
             display: flex;
@@ -38,6 +41,9 @@ footer{
         }
         .newsletter-thanks{
             min-height: 400px;
+            @include to(650px){
+                min-height: 200px;
+            }
             padding: 3em 0;
             display:none;
             &--visible{
@@ -52,6 +58,9 @@ footer{
                 font-size: 3em;
                 @include to(1024px){
                     font-size: 2em;
+                }
+                @include to(650px){
+                    font-size: 1em;
                 }
             }
         }
