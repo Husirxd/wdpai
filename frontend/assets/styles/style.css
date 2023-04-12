@@ -1134,7 +1134,15 @@ footer #newsletter .newsletter-thanks h2 {
   gap: .4em;
 }
 
+@media screen and (max-width: 767px) {
+  #solve-quiz .quiz .questions .question__answers {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 #solve-quiz .quiz .questions .question__answers .answer {
+  text-align: center;
   padding: 1em;
   border-radius: 10px;
   display: -webkit-box;
@@ -1320,6 +1328,7 @@ footer #newsletter .newsletter-thanks h2 {
 @media screen and (max-width: 1023px) {
   .create-container .questions .question .answers .answer-container input {
     min-width: unset;
+    max-width: 150px;
   }
 }
 

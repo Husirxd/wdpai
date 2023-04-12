@@ -16,7 +16,7 @@
                 <input name="email" type="email" placeholder="email@email.com">
                 <input name="password" type="password" placeholder="password">
                 <input name="display_name" type="text" placeholder="display name">
-                <div class="flex flex--center"><button class="button" type="submit">LOGIN</button></div>
+                <div class="flex flex--center"><button class="button" type="submit">CREATE ACCOUNT</button></div>
                 <p class="info">Do I know you from somewhere? <a href="/login/">Yea! Let me login real' quick.</a></p>
             </form>
         </div>

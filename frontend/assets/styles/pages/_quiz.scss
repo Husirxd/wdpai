@@ -38,10 +38,13 @@
                 &__answers{
                     display: grid;
                     grid-template-columns: repeat(2,1fr);
+                    @include to(768px){
+                        grid-template-columns: 1fr;
+                    }
                     gap: .4em;
 
                     .answer{
-
+                        text-align: center;
                         padding: 1em;
                         border-radius: 10px;
                         display: flex;

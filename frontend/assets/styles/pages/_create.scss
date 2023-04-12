@@ -69,6 +69,7 @@
                         min-width: 350px;
                         @include to(1024px){
                             min-width:unset;
+                            max-width: 150px;
                         }
                     }
                     .set-correct{
