@@ -59,6 +59,7 @@
         p{
             color:#222;
             span{
+                color:#222;
                 @include to(1150px){
                     display: none;
                 }

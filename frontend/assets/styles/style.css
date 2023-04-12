@@ -606,6 +606,10 @@ span[data-anim], a[data-anim] {
   color: #222;
 }
 
+.quiz-tile__date p span, .quiz-tile__category p span {
+  color: #222;
+}
+
 @media screen and (max-width: 1149px) {
   .quiz-tile__date p span, .quiz-tile__category p span {
     display: none;
