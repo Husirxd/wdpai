@@ -1159,6 +1159,7 @@ footer #newsletter .newsletter-thanks h2 {
 #solve-quiz .quiz .questions .question__answers .answer {
   text-align: center;
   padding: 1em;
+  word-break: break-all;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
