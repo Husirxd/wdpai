@@ -78,6 +78,9 @@
                         background-color: $azure;
 
                         padding: 0 20px;
+                        &:hover{
+                            scale: 1;
+                        }
                     }
                     &--correct{
                         input{

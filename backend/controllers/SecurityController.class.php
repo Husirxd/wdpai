@@ -82,12 +82,10 @@ class SecurityController extends AppController {
             $title = $_POST["title"];
             $category = $_POST["category"];
             $is_public = isset($_POST["is_public"]) ? 1 : 0;
-            //get thumbnail file and save it to server folder /uploads/user_id
-     
+
             $fileManager = FileManager::getInstance();
             $thumbnail_url = null;
             $thumbnail = $_FILES["thumbnail"];
-            
             $thumbnail_url =  $fileManager->uploadFile($thumbnail, $_SESSION["user"]);
 
             $quizDatabase = new QuizDatabase();

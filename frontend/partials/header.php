@@ -15,6 +15,15 @@
         <div class="header__menu">
             <ul>
                 <li><a href="/archive/">Quizzes</a></li>
+                <?php 
+                $user_id = $_SESSION['user'];
+                if($user_id){
+                
+                    echo '<li><a href="/logout">Logout</a></li>';
+                }else{
+                    echo '<li><a href="/login">Login</a></li>';
+                }
+                ?>
             </ul>
         </div>
         <div class="header__button">
@@ -27,6 +36,13 @@
 <div class="mobile-menu">
     <ul>
         <li><a href="/archive/">Quizzes</a></li>
+        <?php if($user_id)
+            {
+                echo '<li><a href="/logout">Logout</a></li>';
+            }else{
+                echo '<li><a href="/login">Login</a></li>';
+            }
+        ?>
     </ul>
     <div>
             <a href="/create" class="button button-gradient">Add Quiz</a>

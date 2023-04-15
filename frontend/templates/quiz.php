@@ -43,6 +43,5 @@ if(isset($score)){
         <input type="hidden" value="<?php echo $quiz->getId() ?>" name="quiz_id" >
         <button type="submit" class="button ">Submit Answers</button>
         </form>
-    <script src="/frontend/assets/scripts/script.js"></script>
     </section>
 </main>

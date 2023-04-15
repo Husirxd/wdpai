@@ -28,7 +28,6 @@ class FileManager{
 
         $fileType = $this->checkType($fileTrueType);
         $fileSize = $this->checkSize($t_file);
-
         $fileName = $t_file["name"] = uniqid() . "." . $fileTrueType;
 
         if ($uploadOk == 0)  return false;
