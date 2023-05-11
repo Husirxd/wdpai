@@ -5,6 +5,7 @@ if(!isset($_SESSION["user"])){
     header("Location: /login");
 }
 
+
 //display messages
 if(isset($messages)){
     foreach($messages as $message) {
@@ -16,6 +17,7 @@ if(isset($messages)){
     <div class="container container--sm">
         <div class="create-container">
             <form class="create" action="create" method="POST" id="create-quiz" enctype="multipart/form-data">
+                <input type="hidden" name="user_id" value="<?php echo $_SESSION["user"] ?>">
                 <div class="wide"><input name="title" type="text" placeholder="title"></div>
                 <div class="quiz-data">
                     <div class="quiz-info">
@@ -33,7 +35,8 @@ if(isset($messages)){
                     <h2>Questions</h2>
                     <input type="hidden" id="question-count" name="question_count" value="1">
                     <div class="question question--template">
-                        <input type="hidden" name="correct-0" class="question__correct" value="0">
+                        <input type="hidden" name="type-0" value="single">
+                        <input type="hidden" name="correct-0" class="question__correct" value="">
                         <div class="question__top">
                             <input class="question__question" name="question-0"  type="text" placeholder="question">
                             <input type="number" min="0" max="68" placeholder="Set Points" value="1" class="question__points" name="points-0">

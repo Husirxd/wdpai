@@ -40,16 +40,4 @@ class ArchiveAjax{
         $html = ob_get_clean();
         return $html;
     }
-}
-//check if request is ajax
-
-$archiveAjax = ArchiveAjax::getInstance();
-
-$data = json_decode(file_get_contents('php://input'), true);
-
-$responseData = [];
-$responseData['data'] = $archiveAjax -> handleRequest($data);
-echo json_encode($responseData);
-
-
-?>
+}?>

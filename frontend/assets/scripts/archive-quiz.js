@@ -16,7 +16,7 @@ export function archiveQuiz(){
 
     function sendFilters(){
         let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "/backend/ajax/ArchiveAjax.class.php", true);
+        xhttp.open("POST", "/ajax_archive", true);
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let response = JSON.parse(this.responseText);

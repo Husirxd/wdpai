@@ -38,7 +38,7 @@ class FileManager{
                 return "/uploads/user".$user_id."/".$fileName;
             } else {
                 return false;
-         }
+        }
     }
 
     private function checkUserFolder($user_id){

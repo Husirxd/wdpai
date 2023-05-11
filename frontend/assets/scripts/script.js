@@ -65,7 +65,7 @@ const handleNewsletter = () => {
     
         function sendEmail(){
             let xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "/backend/ajax/NewsletterAjax.class.php", true);
+            xhttp.open("POST", "/ajax_newsletter", true);
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.querySelector(".newsletter-form").classList.add("newsletter-form--hidden");

@@ -14,4 +14,6 @@ Router::get('archive', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('results', 'DefaultController');
+Router::post("ajax_archive", "DefaultController");
+Router::post("ajax_newsletter", "DefaultController");
 Router::run($path);

@@ -6,8 +6,6 @@ export function createQuiz() {
     const addAnswer = document.querySelector(".add-answer");
     const setAnswerButtons = document.querySelectorAll(".set-correct");
 
-    //create anotber question on click on button "add question"
-
     let questionNumber = 1;
     addQuestion.addEventListener("click", (e) => {
 
@@ -31,6 +29,7 @@ export function createQuiz() {
             correctInput.name = `correct-${questionNumber}`;
 
             const setAnswerButtons = question.querySelectorAll(".set-correct");
+            
             setAnswerButtons.forEach((answer) => {
                 answer.addEventListener("click",() => setAnswer(answer));
             });
@@ -78,10 +77,9 @@ export function createQuiz() {
         reader.readAsDataURL(file);
     });
 
-}   
+}  
 
 function setQuestionThumbnail(e) {
-    console.log(e);
     const file = e.target.files[0];
     const reader = new FileReader();
     const thumbnailPreview = e.target.parentNode.querySelector(".thumbnail-preview");
@@ -94,15 +92,18 @@ function setQuestionThumbnail(e) {
 function setAnswer(e) {
     const parent = e.parentNode;
     const index = Array.prototype.indexOf.call(parent.parentNode.children, parent);
-
     const correctInput = parent.closest(".question").querySelector(".question__correct");
-    correctInput.value = index;
 
-    const answers = parent.parentNode.querySelectorAll(".answer-container");
-    answers.forEach((a) => {
-        a.classList.remove("answer-container--correct");
-    });
-    e.parentNode.classList.add("answer-container--correct");
+    if(e.parentNode.classList.contains("answer-container--correct")){
+        correctInput.value = correctInput.value.replace(index+",","");
+        e.parentNode.classList.remove("answer-container--correct");
+        return;
+    }else{
+        correctInput.value += index+",";
+        const answers = parent.parentNode.querySelectorAll(".answer-container");
+        e.parentNode.classList.add("answer-container--correct");
+        return;
+    }
 
 }
 
@@ -114,17 +115,10 @@ function cloneAnswer(obj){
         const removeAnswer = "<span class='remove-answer'>×</span>";
         answer.insertAdjacentHTML("beforeend", removeAnswer);
         answers.appendChild(answer);
+        answer.classList.remove("answer-container--correct");
 
-
-
-    const setAnswerButtons = parent.querySelectorAll(".set-correct");
-        setAnswerButtons.forEach((a) => {
-            a.addEventListener("click",() => setAnswer(a));
-        });
-
-        document.querySelectorAll(".remove-answer").forEach((a) => {
-            a.addEventListener("click", (a) => deleteAnswer(a));
-        });
+        answer.querySelector(".set-correct").addEventListener("click",() => setAnswer(answer.querySelector(".set-correct")));
+        answer.querySelector(".remove-answer").addEventListener("click", (a) => deleteAnswer(a));
 
     }
 

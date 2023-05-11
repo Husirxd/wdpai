@@ -9,9 +9,27 @@ class Database{
     private $connection_string = 'postgres://adamczykus:@W5SYwTHWj$Xc&W#v3zP@srv2.kuboit.pl:32768';
     private $connection;
 
-    public function __construct()
+    
+
+    private function __construct()
     {
-        
+
+    }
+
+    //singleton
+    public static function getInstance(){
+        static $instance = null;
+        if($instance === null){
+            $instance = new static();
+        }
+        return $instance;
+    }
+
+    public function getConnection(){
+        if($this->connection == null){
+            $this->connection = $this->connect();
+        }
+        return $this->connection;
     }
 
     public function connect()

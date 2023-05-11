@@ -13,15 +13,14 @@ class Quiz {
     public $created_at;
     public $author;
 
+    protected $quizDatabase;
+    protected $questionDatabase;
 
     public function __construct($quiz_id){
 
-        //create QuizDatabase object
         $quizDatabase = new QuizDatabase();
-        //get quiz from database
         $quiz = $quizDatabase->getQuizById($quiz_id);
 
-        //set quiz properties
         $this->id = $quiz->id;
         $this->title = $quiz->title;
         $this->category = $quiz->category;
@@ -33,9 +32,38 @@ class Quiz {
         $this->questions = null;
         $questionsDatabase = new QuestionDatabase();
         $questions = $questionsDatabase->getQuestionsByQuizId($quiz->id);
+
         foreach($questions as $question){
-            $this->questions[] = new Question($question);
+            $this->questions[] = new Question();
+            $this->questions[count($this->questions)-1]->loadData($question);
         }
+
+    }
+
+    public function getResults($post){
+        $questionsDatabase = new QuestionDatabase();
+        $questions = $questionsDatabase->getQuestionsByQuizId($this->id);
+        $score = 0;
+        $max_score = 0;
+
+        foreach($questions as $key => $question){
+            $max_score += $question->points;
+            $isCorrect = false;
+
+            if($question->type == "multiple"){
+                $questionObject = new QuestionMultiple();
+                $questionObject->loadData($question);
+                $isCorrect = $questionObject->validateAnswer($post["chosen_answer".$key]);
+            }else{
+                $questionObject = new Question();
+                $questionObject->loadData($question);
+                $isCorrect = $questionObject->validateAnswer($post["chosen_answer".$key]);
+            }
+            if($isCorrect){
+                $score += $questionObject->getPoints();
+            }
+        }
+        return array("score" => $score, "max_score" => $max_score);
     }
 
     public function getId(): int 
