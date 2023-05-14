@@ -1,7 +1,11 @@
 <?php
+
+use FileManager;
+
 require_once __DIR__ ."/../database/Database.class.php";
 session_start();
-class QuizDatabase{
+class QuizDatabase
+{
 
     private $db_client = null;
 

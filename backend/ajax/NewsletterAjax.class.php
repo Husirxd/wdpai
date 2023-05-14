@@ -1,7 +1,8 @@
 <?php
 
 require_once __DIR__."/../controllers/NewsletterApi.class.php";
-class NewsletterAjax{
+require_once __DIR__."/IAjax.interface.php";
+class NewsletterAjax implements IAjax{
 
     private $newsletterApi;
     private static $instance = null;

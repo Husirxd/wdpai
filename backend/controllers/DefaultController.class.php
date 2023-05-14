@@ -28,7 +28,7 @@ class DefaultController extends AppController {
             $archiveAjax = ArchiveAjax::getInstance();
             $data = json_decode(file_get_contents('php://input'), true);
             $responseData = [];
-            $responseData['data'] = $archiveAjax -> handleRequest($data);
+            $responseData['data'] = $archiveAjax -> handle_request($data);
             echo json_encode($responseData);
 
         }

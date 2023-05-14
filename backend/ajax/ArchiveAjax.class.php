@@ -4,7 +4,8 @@
 require_once __DIR__ ."/../database/QuizDatabase.class.php";
 require_once __DIR__."/../../frontend/partials/quiz-tile.php";
 require_once __DIR__."/../models/Quiz.class.php";
-class ArchiveAjax{
+require_once __DIR__."/IAjax.interface.php";
+class ArchiveAjax implements IAjax{
     public function __construct()
     {
     }
@@ -16,7 +17,7 @@ class ArchiveAjax{
         return self::$instance;
     }
 
-    public function handleRequest($data){   
+    public function handle_request($data){   
         switch($data['action']){
             case "loadMore":
                 return $this->getArchive($data);

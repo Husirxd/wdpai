@@ -1,6 +1,10 @@
-<?php 
+<?php
+
+use UserDatabase;
+
 require_once "Database.class.php";
-class OwnerDatabase{
+class OwnerDatabase
+{
 
     private $db_client = null;
 

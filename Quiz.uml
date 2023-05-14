@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Quiz</OriginalElement>
+  <nodes>
+    <node x="688.0" y="834.0">\ArchiveAjax</node>
+    <node x="878.0" y="834.0">\OwnerDatabase</node>
+    <node x="332.0" y="480.0">\FileManager</node>
+    <node x="0.0" y="436.0">\QuestionMultiple</node>
+    <node x="301.0" y="0.0">\Quiz</node>
+    <node x="0.0" y="1045.0">\NewsletterApi</node>
+    <node x="788.0" y="557.0">\UserDatabase</node>
+    <node x="862.0" y="0.0">\Database</node>
+    <node x="408.0" y="1045.0">\QuestionFactory</node>
+    <node x="565.25" y="0.0">\AppController</node>
+    <node x="0.0" y="834.0">\NewsletterAjax</node>
+    <node x="492.0" y="194.0">\DefaultController</node>
+    <node x="0.0" y="0.0">\Question</node>
+    <node x="192.0" y="834.0">\QuestionDatabase</node>
+    <node x="213.0" y="1045.0">\QuizFasade</node>
+    <node x="0.0" y="557.0">\QuizDatabase</node>
+    <node x="663.0" y="216.0">\SecurityController</node>
+    <node x="602.0" y="557.0">\User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\SecurityController" target="\AppController" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.0" />
+      <point x="740.0" y="169.0" />
+      <point x="653.75" y="169.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="\QuestionMultiple" target="\Question" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="193.0" />
+    </edge>
+    <edge source="\DefaultController" target="\AppController" relationship="GENERALIZATION">
+      <point x="0.0" y="-82.0" />
+      <point x="567.5" y="169.0" />
+      <point x="653.75" y="169.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8221030042918454" showDependencies="false" x="640.2043852779955" y="575.3388149308275" />
+  <SelectedNodes>
+    <node>\FileManager</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
